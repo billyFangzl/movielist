@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   popular_movies:any;
   upcoming_movies:any;
-  serch_result:any;
+  search_result:any;
   movie:any
   constructor(public movieService:MoviesService) {
     this.movieService.getUpcomingMovies().subscribe(data=>{
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   searchMovies(){
     this.movieService.searchMovie(this.movie).subscribe(data=>{
-      this.serch_result = data['results'];
+      this.search_result = data['results'];
     });
   }
 
